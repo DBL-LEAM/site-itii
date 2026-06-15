@@ -89,15 +89,6 @@
         counters.forEach(el => countIO.observe(el));
     }
 
-    /* ---------- 6. Quiz : sélection d'une option ---------- */
-    const quizOpts = document.querySelectorAll('.quiz__opt');
-    quizOpts.forEach(opt => {
-        opt.addEventListener('click', () => {
-            quizOpts.forEach(o => o.classList.remove('is-selected'));
-            opt.classList.add('is-selected');
-        });
-    });
-
     /* ---------- 7. Formulaire de recherche (démo) ---------- */
     const searchForm = document.getElementById('search-form');
     if (searchForm) {
@@ -113,5 +104,70 @@
                 : 'Indiquez un mot-clé ou un filtre';
             setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 1400);
         });
+    }
+
+    /* ---------- 8. Bandeau bleu « Nos diplômes » : s'arrête au milieu des tuiles ---------- */
+    const aboutSection = document.querySelector('.about');
+    const aboutTiles = document.querySelector('.about__tiles');
+    if (aboutSection && aboutTiles) {
+        // offsetTop cumulé (insensible aux transforms .reveal)
+        const offsetWithin = (el, ancestor) => {
+            let y = 0;
+            while (el && el !== ancestor) { y += el.offsetTop; el = el.offsetParent; }
+            return y;
+        };
+        const setBandHeight = () => {
+            const h = offsetWithin(aboutTiles, aboutSection) + aboutTiles.offsetHeight / 2;
+            aboutSection.style.setProperty('--about-band-h', `${Math.round(h)}px`);
+        };
+        setBandHeight();
+        window.addEventListener('resize', setBandHeight);
+        window.addEventListener('load', setBandHeight);
+    }
+
+    /* ---------- 9. Menus déroulants personnalisés (filtres de recherche) ---------- */
+    const drops = document.querySelectorAll('.fdrop');
+    if (drops.length) {
+        const closeAll = (except) => {
+            drops.forEach(d => {
+                if (d !== except) {
+                    d.classList.remove('is-open');
+                    d.querySelector('.fdrop__toggle').setAttribute('aria-expanded', 'false');
+                }
+            });
+        };
+
+        drops.forEach(drop => {
+            const toggle = drop.querySelector('.fdrop__toggle');
+            const valueEl = drop.querySelector('.fdrop__value');
+            const input = drop.querySelector('input[type="hidden"]');
+            const options = drop.querySelectorAll('.fdrop__opt');
+
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const willOpen = !drop.classList.contains('is-open');
+                closeAll(drop);
+                drop.classList.toggle('is-open', willOpen);
+                toggle.setAttribute('aria-expanded', String(willOpen));
+            });
+
+            options.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    options.forEach(o => {
+                        o.classList.remove('is-selected');
+                        o.setAttribute('aria-selected', 'false');
+                    });
+                    opt.classList.add('is-selected');
+                    opt.setAttribute('aria-selected', 'true');
+                    valueEl.textContent = opt.textContent;
+                    input.value = opt.dataset.value;
+                    drop.classList.remove('is-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+
+        document.addEventListener('click', () => closeAll(null));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(null); });
     }
 })();

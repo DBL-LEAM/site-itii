@@ -22,7 +22,6 @@
 
     <a href="#main" class="skip-link">Aller au contenu principal</a>
 
-    <!-- ============ TOP BAR ============ -->
     <div class="topbar">
         <div class="container topbar__inner">
             <div class="topbar__phones">
@@ -40,7 +39,6 @@
         </div>
     </div>
 
-    <!-- ============ NAVBAR ============ -->
     <header class="navbar" id="navbar">
         <div class="navbar__inner container">
             <a href="#" class="navbar__logo" aria-label="ITII Champagne-Ardenne — Accueil">
@@ -83,8 +81,6 @@
     </header>
 
     <main id="main">
-
-        <!-- ============ HERO ============ -->
         <section class="hero" id="hero">
             <div class="hero__media">
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2000&q=80"
@@ -102,7 +98,6 @@
                 </div>
             </div>
 
-            <!-- Cartes statistiques flottantes -->
             <div class="hero__stats">
                 <div class="hero__stat reveal">
                     <strong data-count="89" data-suffix="%">0</strong>
@@ -115,7 +110,6 @@
             </div>
         </section>
 
-        <!-- Bandeau défilant des atouts -->
         <div class="ticker" aria-hidden="true">
             <div class="ticker__row">
                 <span>Formation par alternance</span><span>•</span>
@@ -133,7 +127,6 @@
             </div>
         </div>
 
-        <!-- ============ QUI SOMMES-NOUS ============ -->
         <section class="intro" id="ecole-intro">
             <div class="container">
                 <div class="intro__card reveal">
@@ -156,7 +149,6 @@
             </div>
         </section>
 
-        <!-- ============ RECHERCHE FORMATIONS ============ -->
         <section class="search" id="recherche">
             <div class="container">
                 <header class="section-head section-head--row reveal">
@@ -182,35 +174,68 @@
                     </div>
 
                     <div class="finder__field">
-                        <label for="f-lieu">Lieu</label>
-                        <select id="f-lieu" name="lieu">
-                            <option value="">Tous les lieux</option>
-                            <option value="ardennes">Ardennes</option>
-                            <option value="aube">Aube</option>
-                            <option value="marne">Marne</option>
-                            <option value="haute-marne">Haute-Marne</option>
-                        </select>
+                        <label id="f-lieu-label">Lieu</label>
+                        <div class="fdrop" data-name="lieu">
+                            <button type="button" class="fdrop__toggle" aria-haspopup="listbox"
+                                aria-expanded="false" aria-labelledby="f-lieu-label">
+                                <span class="fdrop__value">Tous les lieux</span>
+                                <svg class="fdrop__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </button>
+                            <ul class="fdrop__menu" role="listbox" aria-labelledby="f-lieu-label">
+                                <li class="fdrop__opt is-selected" role="option" aria-selected="true" data-value="">Tous les lieux</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="ardennes">Ardennes</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="aube">Aube</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="marne">Marne</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="haute-marne">Haute-Marne</li>
+                            </ul>
+                            <input type="hidden" name="lieu" value="">
+                        </div>
                     </div>
 
                     <div class="finder__field">
-                        <label for="f-type">Type</label>
-                        <select id="f-type" name="type">
-                            <option value="">Tous types</option>
-                            <option value="courte">Formation courte</option>
-                            <option value="longue">Formation longue</option>
-                        </select>
+                        <label id="f-type-label">Type</label>
+                        <div class="fdrop" data-name="type">
+                            <button type="button" class="fdrop__toggle" aria-haspopup="listbox"
+                                aria-expanded="false" aria-labelledby="f-type-label">
+                                <span class="fdrop__value">Tous types</span>
+                                <svg class="fdrop__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </button>
+                            <ul class="fdrop__menu" role="listbox" aria-labelledby="f-type-label">
+                                <li class="fdrop__opt is-selected" role="option" aria-selected="true" data-value="">Tous types</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="courte">Formation courte</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="longue">Formation longue</li>
+                            </ul>
+                            <input type="hidden" name="type" value="">
+                        </div>
                     </div>
 
                     <div class="finder__field">
-                        <label for="f-niveau">Niveau</label>
-                        <select id="f-niveau" name="niveau">
-                            <option value="">Tous niveaux</option>
-                            <option value="3">CAP / Niveau 3</option>
-                            <option value="4">BAC PRO / Niveau 4</option>
-                            <option value="5">BTS / Niveau 5</option>
-                            <option value="6">LICENCE PRO / Niveau 6</option>
-                            <option value="7">MASTER, INGÉNIEUR / Niveau 7</option>
-                        </select>
+                        <label id="f-niveau-label">Niveau</label>
+                        <div class="fdrop" data-name="niveau">
+                            <button type="button" class="fdrop__toggle" aria-haspopup="listbox"
+                                aria-expanded="false" aria-labelledby="f-niveau-label">
+                                <span class="fdrop__value">Tous niveaux</span>
+                                <svg class="fdrop__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </button>
+                            <ul class="fdrop__menu" role="listbox" aria-labelledby="f-niveau-label">
+                                <li class="fdrop__opt is-selected" role="option" aria-selected="true" data-value="">Tous niveaux</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="3">CAP / Niveau 3</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="4">BAC PRO / Niveau 4</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="5">BTS / Niveau 5</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="6">LICENCE PRO / Niveau 6</li>
+                                <li class="fdrop__opt" role="option" aria-selected="false" data-value="7">MASTER, INGÉNIEUR / Niveau 7</li>
+                            </ul>
+                            <input type="hidden" name="niveau" value="">
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn--primary finder__submit search__submit">
@@ -224,26 +249,6 @@
             </div>
         </section>
 
-        <!-- ============ QUIZ D'ORIENTATION ============ -->
-        <section class="quiz" id="quiz">
-            <div class="container quiz__inner reveal">
-                <div class="quiz__head">
-                    <span class="section-head__kicker">Quiz d'orientation</span>
-                    <h2>Quel parcours d'ingénieur est fait pour vous&nbsp;?</h2>
-                    <span class="quiz__step">Question 1 / 1</span>
-                </div>
-                <p class="quiz__q">Quel est votre profil aujourd'hui&nbsp;?</p>
-                <div class="quiz__options" role="radiogroup" aria-label="Votre profil">
-                    <button class="quiz__opt" type="button">🎓 Étudiant (Bac+2, BTS, BUT, Prépa)</button>
-                    <button class="quiz__opt" type="button">💼 Salarié ou en reconversion</button>
-                    <button class="quiz__opt" type="button">🏭 Entreprise à la recherche d'un apprenti</button>
-                </div>
-                <p class="quiz__note">La suite s'adapte à votre situation et se limite aux formations
-                    ITII réellement disponibles sur ce site.</p>
-            </div>
-        </section>
-
-        <!-- ============ L'ÉCOLE ============ -->
         <section class="about" id="ecole">
             <div class="container about__grid">
                 <div class="about__media reveal">
@@ -264,12 +269,12 @@
                     </p>
                     <div class="about__tiles">
                         <div class="about__tile">
-                            <span class="about__tile-level">BAC +3</span>
-                            <strong>Cycle préparatoire intégré</strong>
+                            <span class="about__tile-level">BAC+3</span>
+                            <strong>Haut technicien industriel / de l'industrie</strong>
                         </div>
                         <div class="about__tile about__tile--accent">
-                            <span class="about__tile-level">Titre RNCP Niv. 7 — Master</span>
-                            <strong>Diplôme d'ingénieur</strong>
+                            <span class="about__tile-level">BAC+5</span>
+                            <strong>Diplôme d'ingénieur / Master</strong>
                         </div>
                     </div>
                     <div class="about__mission">
@@ -283,38 +288,41 @@
                         </svg>
                         Des programmes reconnus <strong>CTI</strong> — Convention des titres ingénieur
                     </p>
-                    <a href="#specialites" class="btn btn--primary">Découvrir nos formations →</a>
+                    <div class="about__foot">
+                        <a href="#specialites" class="btn btn--primary">Découvrir nos formations →</a>
+                        <img class="about__cti-logo" src="img/cti-logo-cmjn-e1514903939600.png"
+                            alt="Logo CTI — Commission des titres d'ingénieur" loading="lazy" width="65" height="64">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ CAMPUS (théorie/réalité) ============ -->
         <section class="campus-cta">
-            <div class="campus-cta__bg">
-                <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=2000&q=80"
-                    alt="Usine industrielle">
-                <div class="campus-cta__overlay"></div>
-            </div>
             <div class="container campus-cta__content reveal">
-                <span class="section-head__kicker section-head__kicker--light">Nos campus</span>
-                <h2>Là où la théorie<br>rencontre la réalité.</h2>
-                <p>Deux campus en Champagne-Ardenne, en partenariat avec l'EiSINe (URCA) et le
-                    Pôle Formation UIMM.</p>
-                <ul class="campus-cta__list">
-                    <li>
-                        <strong>Reims</strong> <span>(Marne)</span>
-                        <em>EiSINe // Pôle Formation UIMM</em>
-                    </li>
-                    <li>
-                        <strong>Charleville-Mézières</strong> <span>(Ardennes)</span>
-                        <em>EiSINe // Pôle Formation UIMM – Campus Sup Ardenne</em>
-                    </li>
-                </ul>
-                <a href="#contact" class="btn btn--white">Visiter les campus →</a>
+                <div class="campus-cta__text">
+                    <span class="section-head__kicker section-head__kicker--light">Nos campus</span>
+                    <h2>Là où la théorie<br>rencontre la réalité.</h2>
+                    <p>Deux campus en Champagne-Ardenne, en partenariat avec l'EiSINe (URCA) et le
+                        Pôle Formation UIMM.</p>
+                    <ul class="campus-cta__list">
+                        <li>
+                            <strong>Reims</strong> <span>(Marne)</span>
+                            <em>EiSINe // Pôle Formation UIMM</em>
+                        </li>
+                        <li>
+                            <strong>Charleville-Mézières</strong> <span>(Ardennes)</span>
+                            <em>EiSINe // Pôle Formation UIMM – Campus Sup Ardenne</em>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn--white">Visiter les campus →</a>
+                </div>
+                <div class="campus-cta__logo">
+                    <img src="img/UIMM-Region-ChampagneArdenne-Rvb-768x713.png"
+                        alt="UIMM Région Champagne-Ardenne" loading="lazy" width="768" height="713">
+                </div>
             </div>
         </section>
 
-        <!-- ============ COMMENT ÇA MARCHE ============ -->
         <section class="steps">
             <div class="container">
                 <header class="section-head reveal">
@@ -350,14 +358,12 @@
             </div>
         </section>
 
-        <!-- ============ EN ENTREPRISE DÈS LE 1ER JOUR ============ -->
         <section class="appr" id="apprentissage">
             <div class="container appr__grid">
                 <div class="appr__media reveal">
-                    <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?auto=format&fit=crop&w=1100&q=80"
-                        alt="Ingénieur en entreprise">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1100&q=80"
+                        alt="Jeune ingénieur en entreprise industrielle">
                     <div class="appr__float">
-                        <span class="appr__float-icon">💼</span>
                         <div>
                             <strong>Contrat d'apprentissage</strong>
                             <span>Salarié dès le 1ᵉʳ jour</span>
@@ -384,7 +390,6 @@
             </div>
         </section>
 
-        <!-- ============ À QUI S'ADRESSE L'ITII ============ -->
         <section class="audience" id="audience">
             <div class="container">
                 <header class="section-head reveal">
@@ -393,21 +398,18 @@
                 </header>
                 <div class="audience__grid">
                     <article class="aud-card reveal">
-                        <span class="aud-card__icon">🎓</span>
                         <h3>Étudiants</h3>
                         <p>Post-BTS, post-BUT, post-Licence, post-Prépa / CPGE&nbsp;:
                             devenez ingénieur en alternance dans l'industrie&nbsp;!</p>
                         <a href="#candidature" class="aud-card__link">Pré-candidater →</a>
                     </article>
                     <article class="aud-card reveal">
-                        <span class="aud-card__icon">💼</span>
                         <h3>Salariés — Formation continue</h3>
                         <p>Faites évoluer votre carrière ou engagez une reconversion via la formation
                             continue ou la VAE&nbsp;!</p>
                         <a href="#recherche" class="aud-card__link">Formation continue →</a>
                     </article>
                     <article class="aud-card reveal">
-                        <span class="aud-card__icon">🏭</span>
                         <h3>Entreprises — Recrutement &amp; formation</h3>
                         <p>Recrutez vos futurs cadres techniques, formés aux réalités de votre secteur.
                             Formez vos collaborateurs et sauvegardez vos savoir-faire.</p>
@@ -417,7 +419,104 @@
             </div>
         </section>
 
-        <!-- ============ ACTUALITÉS ============ -->
+        <section class="specialites" id="specialites">
+            <div class="container">
+                <header class="section-head section-head--light reveal">
+                    <span class="section-head__kicker section-head__kicker--light">3 spécialités</span>
+                    <h2 class="section-head__title">Choisis ton terrain</h2>
+                    <p class="section-head__lead section-head__lead--light">
+                        Trois spécialités d'ingénieur reconnues CTI (Convention des titres ingénieur),
+                        réparties sur nos campus de Reims et Charleville-Mézières.
+                    </p>
+                </header>
+
+                <div class="specialites__grid">
+                    <article class="spec-card reveal">
+                        <img class="spec-card__img"
+                            src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80"
+                            alt="" loading="lazy">
+                        <span class="spec-card__num">01</span>
+                        <h3>Automatique &amp; Génie Électrique</h3>
+                        <p>Automatismes, robotique, électronique de puissance, IoT, réseaux industriels.</p>
+                        <span class="spec-card__campus">Campus de Reims</span>
+                        <a href="#candidature" class="spec-card__link">Découvrir →</a>
+                    </article>
+                    <article class="spec-card reveal">
+                        <img class="spec-card__img"
+                            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80"
+                            alt="" loading="lazy">
+                        <span class="spec-card__num">02</span>
+                        <h3>Matériaux &amp; Mécanique</h3>
+                        <p>Conception, résistance des matériaux, procédés de fabrication, composites,
+                            impression 3D.</p>
+                        <span class="spec-card__campus">Campus de Charleville-Mézières</span>
+                        <a href="#candidature" class="spec-card__link">Découvrir →</a>
+                    </article>
+                    <article class="spec-card reveal">
+                        <img class="spec-card__img"
+                            src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=900&q=80"
+                            alt="" loading="lazy">
+                        <span class="spec-card__num">03</span>
+                        <h3>Mécanique &amp; Génie Industriel — Maintenance 4.0</h3>
+                        <p>Lean manufacturing, gestion de production, qualité, supply chain et maintenance.</p>
+                        <span class="spec-card__campus">Campus de Reims</span>
+                        <a href="#candidature" class="spec-card__link">Découvrir →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="results" id="chiffres">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="section-head__kicker">Nos chiffres-clés</span>
+                    <h2 class="section-head__title">Des résultats qui parlent d'eux-mêmes</h2>
+                    <p class="section-head__lead">
+                        Depuis plus de 20 ans, l'ITII Champagne-Ardenne forme des ingénieurs ancrés dans
+                        la réalité industrielle dès le 1<sup>er</sup> jour.
+                    </p>
+                </header>
+                <div class="results__grid">
+                    <article class="stat-card stat-card--light reveal">
+                        <span class="stat-card__num" data-count="750">0</span>
+                        <span class="stat-card__label">Ingénieurs formés par l'apprentissage</span>
+                    </article>
+                    <article class="stat-card stat-card--light reveal">
+                        <span class="stat-card__num" data-count="190">0</span>
+                        <span class="stat-card__label">Ingénieurs diplômés en formation continue</span>
+                    </article>
+                    <article class="stat-card stat-card--light reveal">
+                        <span class="stat-card__num" data-count="90" data-suffix="%">0</span>
+                        <span class="stat-card__label">Réussite aux examens</span>
+                    </article>
+                    <article class="stat-card stat-card--light reveal">
+                        <span class="stat-card__num" data-count="89" data-suffix="%">0</span>
+                        <span class="stat-card__label">Insertion professionnelle dès la sortie</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners" aria-label="Entreprises partenaires">
+            <div class="container">
+                <p class="partners__title reveal">Nos partenaires industriels</p>
+            </div>
+            <div class="partners__marquee">
+                <div class="partners__row">
+                    <span>ArcelorMittal</span><span>Valeo</span><span>SNCF</span><span>EDF</span>
+                    <span>Enedis</span><span>Nexans</span><span>Nestlé</span><span>Knorr-Bremse</span>
+                    <span>Fanuc</span><span>Fonte Ardennaise</span><span>Cristal Union</span><span>Tereos</span>
+                    <span>Smurfit Kappa</span><span>Yanmar</span><span>Walor</span><span>Ferry Capitain</span>
+                    <span>AHD</span><span>O-I</span><span>Amada</span><span>Adler Pelzer</span><span>Faber</span>
+                    <span>ArcelorMittal</span><span>Valeo</span><span>SNCF</span><span>EDF</span>
+                    <span>Enedis</span><span>Nexans</span><span>Nestlé</span><span>Knorr-Bremse</span>
+                    <span>Fanuc</span><span>Fonte Ardennaise</span><span>Cristal Union</span><span>Tereos</span>
+                    <span>Smurfit Kappa</span><span>Yanmar</span><span>Walor</span><span>Ferry Capitain</span>
+                    <span>AHD</span><span>O-I</span><span>Amada</span><span>Adler Pelzer</span><span>Faber</span>
+                </div>
+            </div>
+        </section>
+
         <section class="news" id="actualites">
             <div class="container">
                 <header class="section-head section-head--row reveal">
@@ -489,100 +588,6 @@
             </div>
         </section>
 
-        <!-- ============ 3 SPÉCIALITÉS ============ -->
-        <section class="specialites" id="specialites">
-            <div class="container">
-                <header class="section-head section-head--light reveal">
-                    <span class="section-head__kicker section-head__kicker--light">3 spécialités</span>
-                    <h2 class="section-head__title">Choisis ton terrain</h2>
-                    <p class="section-head__lead section-head__lead--light">
-                        Trois spécialités d'ingénieur reconnues CTI (Convention des titres ingénieur),
-                        réparties sur nos campus de Reims et Charleville-Mézières.
-                    </p>
-                </header>
-
-                <div class="specialites__grid">
-                    <article class="spec-card reveal">
-                        <span class="spec-card__num">01</span>
-                        <h3>Automatique &amp; Génie Électrique</h3>
-                        <p>Automatismes, robotique, électronique de puissance, IoT, réseaux industriels.</p>
-                        <span class="spec-card__campus">📍 Campus de Reims</span>
-                        <a href="#candidature" class="spec-card__link">Découvrir →</a>
-                    </article>
-                    <article class="spec-card reveal">
-                        <span class="spec-card__num">02</span>
-                        <h3>Matériaux &amp; Mécanique</h3>
-                        <p>Conception, résistance des matériaux, procédés de fabrication, composites,
-                            impression 3D.</p>
-                        <span class="spec-card__campus">📍 Campus de Charleville-Mézières</span>
-                        <a href="#candidature" class="spec-card__link">Découvrir →</a>
-                    </article>
-                    <article class="spec-card reveal">
-                        <span class="spec-card__num">03</span>
-                        <h3>Mécanique &amp; Génie Industriel — Maintenance 4.0</h3>
-                        <p>Lean manufacturing, gestion de production, qualité, supply chain et maintenance.</p>
-                        <span class="spec-card__campus">📍 Campus de Reims</span>
-                        <a href="#candidature" class="spec-card__link">Découvrir →</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ RÉSULTATS / INDUSTRIE 4.0 ============ -->
-        <section class="results" id="chiffres">
-            <div class="container">
-                <header class="section-head reveal">
-                    <span class="section-head__kicker">Nos chiffres-clés</span>
-                    <h2 class="section-head__title">Des résultats qui parlent d'eux-mêmes</h2>
-                    <p class="section-head__lead">
-                        Depuis plus de 20 ans, l'ITII Champagne-Ardenne forme des ingénieurs ancrés dans
-                        la réalité industrielle dès le 1<sup>er</sup> jour.
-                    </p>
-                </header>
-                <div class="results__grid">
-                    <article class="stat-card stat-card--light reveal">
-                        <span class="stat-card__num" data-count="750">0</span>
-                        <span class="stat-card__label">Ingénieurs formés par l'apprentissage</span>
-                    </article>
-                    <article class="stat-card stat-card--light reveal">
-                        <span class="stat-card__num" data-count="190">0</span>
-                        <span class="stat-card__label">Ingénieurs diplômés en formation continue</span>
-                    </article>
-                    <article class="stat-card stat-card--light reveal">
-                        <span class="stat-card__num" data-count="90" data-suffix="%">0</span>
-                        <span class="stat-card__label">Réussite aux examens</span>
-                    </article>
-                    <article class="stat-card stat-card--light reveal">
-                        <span class="stat-card__num" data-count="89" data-suffix="%">0</span>
-                        <span class="stat-card__label">Insertion professionnelle dès la sortie</span>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ PARTENAIRES ============ -->
-        <section class="partners" aria-label="Entreprises partenaires">
-            <div class="container">
-                <p class="partners__title reveal">Nos partenaires industriels</p>
-            </div>
-            <div class="partners__marquee">
-                <div class="partners__row">
-                    <span>ArcelorMittal</span><span>Valeo</span><span>SNCF</span><span>EDF</span>
-                    <span>Enedis</span><span>Nexans</span><span>Nestlé</span><span>Knorr-Bremse</span>
-                    <span>Fanuc</span><span>Fonte Ardennaise</span><span>Cristal Union</span><span>Tereos</span>
-                    <span>Smurfit Kappa</span><span>Yanmar</span><span>Walor</span><span>Ferry Capitain</span>
-                    <span>AHD</span><span>O-I</span><span>Amada</span><span>Adler Pelzer</span><span>Faber</span>
-                    <!-- duplicate pour boucle continue -->
-                    <span>ArcelorMittal</span><span>Valeo</span><span>SNCF</span><span>EDF</span>
-                    <span>Enedis</span><span>Nexans</span><span>Nestlé</span><span>Knorr-Bremse</span>
-                    <span>Fanuc</span><span>Fonte Ardennaise</span><span>Cristal Union</span><span>Tereos</span>
-                    <span>Smurfit Kappa</span><span>Yanmar</span><span>Walor</span><span>Ferry Capitain</span>
-                    <span>AHD</span><span>O-I</span><span>Amada</span><span>Adler Pelzer</span><span>Faber</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ CTA FINAL ============ -->
         <section class="cta" id="candidature">
             <div class="container cta__inner reveal">
                 <span class="section-head__kicker section-head__kicker--light">Ingénieurs</span>
@@ -597,7 +602,6 @@
         </section>
     </main>
 
-    <!-- ============ FOOTER ============ -->
     <footer class="footer" id="contact">
         <div class="container footer__grid">
             <div class="footer__brand">
